@@ -1,4 +1,6 @@
-
+@function pxTorem($px){//$px为需要转换的字号
+    @return $px / 200 * 1rem;
+}
 
 body,html {
     width: 100%;
@@ -10,5 +12,46 @@ body,html {
 #app{
     width: 100%;
     height: 100%;
+    .menu{
+        overflow: hidden;
+        position: fixed;
+        background: #f4f5f6;
+        height: pxTorem(74);
+        width: 100%;
+        top: pxTorem(88);
+        z-index: 999;
+
+        .more_btn{
+            width: pxTorem(80);
+            height:pxTorem(74) ;
+            position: absolute;
+            background: #f4f5f6;
+            right: 0;
+            top: 0;
+            box-shadow: -2px 0 20px 5px rgba($color: #000000, $alpha:0.2);
+            i{
+                font-size: pxTorem(70);
+                padding-left: pxTorem(5);
+                position: absolute;
+                color: #f85959;
+            }
+        }
+        .menu_list{
+            height:pxTorem(74) ;
+            overflow-x: scroll;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            margin-right: pxTorem(80);
+            font-size: pxTorem(32);
+            // 滚动条隐藏
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .menu_item{
+                padding: 0 pxTorem(30);
+            }
+        }
+    }
 
 }
