@@ -1,8 +1,61 @@
+@function pxTorem($px){//$px为需要转换的字号
+    @return $px / 200 * 1rem;
+}
+
 #app_header{
+    $header_height : pxTorem(88);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background: #d43d3d;
-    height: 0.44rem;
+    height: $header_height;
+    .title{
+        height: $header_height;
+        line-height: $header_height;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        >span{
+            font-size: pxTorem(40);
+            font-weight: bold;
+            color: white;
+        }   
+        >img{
+            display: inline-block;
+            padding-left: pxTorem(10);
+            height: pxTorem(30);
+            width: pxTorem(40);
+            margin-top: pxTorem(5);
+        }
+    }
+   
+    .email,.search{
+        position: absolute;
+        z-index: 2;
+        padding: pxTorem(10);
+        top: pxTorem(10);
+        >img{
+            // float: left;
+            height: pxTorem(48);
+            width: pxTorem(48);
+        }
+    }
+    .email{
+        .circle{
+            position: absolute;
+            width: pxTorem(20);
+            height: pxTorem(20);
+            border-radius: 50%;
+            background-color: white;
+            right: pxTorem(5);
+            top: pxTorem(10);
+        }
+        left: pxTorem(20);
+    }
+    .search{
+        right: pxTorem(20);
+    }
 }
