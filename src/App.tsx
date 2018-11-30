@@ -7,10 +7,14 @@ import AppNav  from './common/nav/App-nav';
 import AppFooter from './common/footer/App-footer'
 
   class App extends Component {
+    state = {
+        typesOfHeader:'index'
+    }
     render(){
+        let {typesOfHeader} = this.state
         return (
             <div id="app">
-                <AppHeader />
+                <AppHeader Header={typesOfHeader}/>
                 <AppNav />
 
 
